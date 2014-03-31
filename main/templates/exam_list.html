@@ -1,0 +1,28 @@
+# extends 'base.html'
+
+# block content
+  <div class="page-header">
+    <h1>{{title}}</h1>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      # for exam_db in exam_dbs
+        <tr>
+          <td>
+             <a href="{{url_for('exam_view', exam_id=exam_db.key.id())}}">
+               {{exam_db.name}}
+             </a>
+          </td>
+          <td>{{exam_db.desc}}</td>
+        </tr>
+      # endfor
+    </tbody>
+  </table>
+# endblock
